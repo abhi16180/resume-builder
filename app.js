@@ -47,8 +47,14 @@ async function renderPDF(stud) {
 };
 app.get('/', async (req, res) => {
     await renderPDF(req.query.name);
-    const data = await fs.readFile('./temp.pdf');
-    res.send(data);
+    // const data = await fs.readFile('./temp.pdf');
+    // res.send(data);
+    var file = fs.createReadStream('./temp.pdf');
+    var stat = fs.statSync('./temp.pdf');
+    res.setHeader('Content-Length', stat.size);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename=${req.query.name}'s resume.pdf`);
+    file.pipe(res);
 
 })
 
