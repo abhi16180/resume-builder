@@ -43,9 +43,10 @@ async function renderPDF() {
     }
 };
 app.get('/', async (req, res) => {
-    await renderPDF();
-    const data = await fs.readFile('./temp.pdf');
-    res.send(data);
+    // await renderPDF();
+    // const data = await fs.readFile('./temp.pdf');
+    // res.send(data);
+    res.send('working');
 })
 
 
