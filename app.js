@@ -20,14 +20,14 @@ const compile = async function (templateName, data) {
 // hbs.registerHelper('dateformat',function(value,format){
 //     return moveMessagePortToContext({value}.format(format));
 // })
-async function renderPDF() {
+async function renderPDF(stud) {
     try {
         const browser = await puppeteer.launch({
             headless: true,
             args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
         const page = await browser.newPage();
-        const content = await compile('index', {});
+        const content = await compile('index', { name: stud });
         await page.addStyleTag({ path: './dist/output.css' })
         await page.setContent(content);
         await page.emulateMediaType('screen')
@@ -46,7 +46,7 @@ async function renderPDF() {
     }
 };
 app.get('/', async (req, res) => {
-    await renderPDF();
+    await renderPDF(req.query.name);
     const data = await fs.readFile('./temp.pdf');
     res.send(data);
 
