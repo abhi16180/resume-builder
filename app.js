@@ -22,7 +22,10 @@ const compile = async function (templateName, data) {
 // })
 async function renderPDF() {
     try {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            headless: true,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
+        });
         const page = await browser.newPage();
         const content = await compile('index', {});
         await page.addStyleTag({ path: './dist/output.css' })
