@@ -5,10 +5,11 @@ const cors = require('cors');
 const fs = require('fs-extra');
 const hbs = require('handlebars');
 const path = require('path');
+require('dotenv').config()
 const { moveMessagePortToContext } = require('worker_threads');
 app.use(cors());
 
-const PORT = 3000;
+const PORT = process.env.port || 3000;
 
 const compile = async function (templateName, data) {
     const filePath = path.join(process.cwd(), 'views', `${templateName}.html`);
