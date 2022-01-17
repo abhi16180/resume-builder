@@ -12,7 +12,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 const compile = async function (templateName, data) {
-    const filePath = path.join(process.cwd(), 'views', `${templateName}.hbs`);
+    const filePath = path.join(process.cwd(), 'views', `${templateName}.html`);
     const html = await fs.readFile(filePath, 'utf-8');
     return hbs.compile(html)(data);
 }
@@ -27,7 +27,13 @@ async function renderPDF(stud) {
             args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
         const page = await browser.newPage();
-        const content = await compile('index', { name: stud });
+        const content = await compile('index', {
+            skills: [
+                { skillName: 'iPhone' },
+                { skillName: 'Android' },
+                { skillName: 'Windows Phone' }
+            ]
+        });
         await page.addStyleTag({ path: './dist/output.css' })
         await page.setContent(content);
         await page.emulateMediaType('screen')
