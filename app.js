@@ -12,7 +12,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 const compile = async function (templateName, data) {
-    const filePath = path.join(process.cwd(), 'views', `${templateName}.html`);
+    const filePath = path.join(process.cwd(), 'views', `${templateName}.hbs`);
     const html = await fs.readFile(filePath, 'utf-8');
     return hbs.compile(html)(data);
 }
