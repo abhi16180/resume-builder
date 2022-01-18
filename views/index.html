@@ -1,242 +1,116 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
+
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 400px 410px;
+      background-color: #ffffff;
+      padding: 10px;
 
-	<title>Jonathan Doe | Web Designer, Director | name@yourdomain.com</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    }
 
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+    .grid-item {
 
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
-	<!-- <link rel="stylesheet" type="text/css" href="resume.css" media="all" /> -->
-<style>/*
----------------------------------------------------------------------------------
-	STRIPPED DOWN RESUME TEMPLATE
-    html resume
-
-    v0.9: 5/28/09
-
-    design and code by: thingsthatarebrown.com 
-                        (matt brown)
----------------------------------------------------------------------------------
-*/
-
-
-.msg { padding: 10px; background: #222; position: relative; }
-.msg h1 { color: #fff;  }
-.msg a { margin-left: 20px; background: #408814; color: white; padding: 4px 8px; text-decoration: none; }
-.msg a:hover { background: #266400; }
-
-/* //-- yui-grids style overrides -- */
-body { font-family: Georgia; color: #444; }
-#inner { padding: 10px 80px; margin: 80px auto; background: #f5f5f5; border: solid #666; border-width: 8px 0 2px 0; }
-.yui-gf { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
-
-/* //-- header, body, footer -- */
-#hd { margin: 2.5em 0 3em 0; padding-bottom: 1.5em; border-bottom: 1px solid #ccc }
-#hd h2 { text-transform: uppercase; letter-spacing: 2px; }
-#bd, #ft { margin-bottom: 2em; }
-
-/* //-- footer -- */
-#ft { padding: 1em 0 5em 0; font-size: 92%; border-top: 1px solid #ccc; text-align: center; }
-#ft p { margin-bottom: 0; text-align: center;   }
-
-/* //-- core typography and style -- */
-#hd h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 3px; }
-h2 { font-size: 152% }
-h3, h4 { font-size: 122%; }
-h1, h2, h3, h4 { color: #333; }
-p { font-size: 100%; line-height: 18px; padding-right: 3em; }
-a { color: #990003 }
-a:hover { text-decoration: none; }
-strong { font-weight: bold; }
-li { line-height: 24px; border-bottom: 1px solid #ccc; }
-p.enlarge { font-size: 144%; padding-right: 6.5em; line-height: 24px; }
-p.enlarge span { color: #000 }
-.contact-info { margin-top: 7px; }
-.first h2 { font-style: italic; }
-.last { border-bottom: 0 }
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+      height: 1040px;
 
 
-/* //-- section styles -- */
+    }
 
-a#pdf { display: block; float: left; background: #666; color: white; padding: 6px 50px 6px 12px; margin-bottom: 6px; text-decoration: none;  }
-a#pdf:hover { background: #222; }
+    .grid-row-container {
+      grid-template-rows: max-content;
+    }
 
-.job { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
-.job h4 { position: absolute; top: 0.35em; right: 0 }
-.job p { margin: 0.75em 0 3em 0; }
+    .row-item {
+      /* height: 260px; */
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+    }
 
-.last { border: none; }
-.skills-list {  }
-.skills-list ul { margin: 0; }
-.skills-list li { margin: 3px 0; padding: 3px 0; }
-.skills-list li span { font-size: 152%; display: block; margin-bottom: -2px; padding: 0 }
-.talent { width: 32%; float: left }
-.talent h2 { margin-bottom: 6px; }
+    #image {
+      border-radius: 50%;
+      width: 140px;
+      height: auto;
+      padding: 8px;
+    }
 
-#srt-ttab { margin-bottom: 100px; text-align: center;  }
-#srt-ttab img.last { margin-top: 20px }
+    .elements {
+      height: 0px;
+      font-size: 16px;
+      padding: 0px;
+      margin-top: 15px;
 
-/* --// override to force 1/8th width grids -- */
-.yui-gf .yui-u{width:80.2%;}
-.yui-gf div.first{width:12.3%;}
+    }
+  .icon {
+ 
+  /* Adjust these valures accordingly */
+height: 15px;
+width: 15px;
+position:absolute;
+left: 50px;
+padding-right: 10px;
 
-
-</style>
+}
+  </style>
 </head>
-<body>
 
-<div id="doc2" class="yui-t7">
-	<div id="inner">
-	
-		<div id="hd">
-			<div class="yui-gc">
-				<div class="yui-u first">
-					<h1>{{name}}</h1>
-					<h2>Web Designer, Director</h2>
-				</div>
+<body style="font-family: 'Poppins', sans-serif 'Open Sans';">
 
-				<div class="yui-u">
-					<div class="contact-info">
-						<h3><a id="pdf" href="#">Download PDF</a></h3>
-						<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
-						<h3>(313) - 867-5309</h3>
-					</div><!--// .contact-info -->
-				</div>
-			</div><!--// .yui-gc -->
-		</div><!--// hd -->
+  <div class="grid-container" style="font-family: 'Nunito Sans';">
+    <div class="grid-item grid-row-container">
 
-		<div id="bd">
-			<div id="yui-main">
-				<div class="yui-b">
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Profile</h2>
-						</div>
-						<div class="yui-u">
-							<p class="enlarge">
-								Progressively evolve cross-platform ideas before impactful infomediaries. Energistically visualize tactical initiatives before cross-media catalysts for change. 
-							</p>
-						</div>
-					</div><!--// .yui-gf -->
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Skills</h2>
-						</div>
-						<div class="yui-u">
-
-								<div class="talent">
-									<h2>Web Design</h2>
-									<p>Assertively exploit wireless initiatives rather than synergistic core competencies.	</p>
-								</div>
-
-								<div class="talent">
-									<h2>Interface Design</h2>
-									<p>Credibly streamline mission-critical value with multifunctional functionalities.	 </p>
-								</div>
-
-								<div class="talent">
-									<h2>Project Direction</h2>
-									<p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.</p>
-								</div>
-						</div>
-					</div><!--// .yui-gf -->
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Technical</h2>
-						</div>
-						<div class="yui-u">
-							<ul class="talent">
-								<li>XHTML</li>
-								<li>CSS</li>
-								<li class="last">Javascript</li>
-							</ul>
-
-							<ul class="talent">
-								<li>Jquery</li>
-								<li>PHP</li>
-								<li class="last">CVS / Subversion</li>
-							</ul>
-
-							<ul class="talent">
-								<li>OS X</li>
-								<li>Windows XP/Vista</li>
-								<li class="last">Linux</li>
-							</ul>
-						</div>
-					</div><!--// .yui-gf-->
-
-					<div class="yui-gf">
-	
-						<div class="yui-u first">
-							<h2>Experience</h2>
-						</div><!--// .yui-u -->
-
-						<div class="yui-u">
-
-							<div class="job">
-								<h2>Facebook</h2>
-								<h3>Senior Interface Designer</h3>
-								<h4>2005-2007</h4>
-								<p>Intrinsicly enable optimal core competencies through corporate relationships. Phosfluorescently implement worldwide vortals and client-focused imperatives. Conveniently initiate virtual paradigms and top-line convergence. </p>
-							</div>
-
-							<div class="job">
-								<h2>Apple Inc.</h2>
-								<h3>Senior Interface Designer</h3>
-								<h4>2005-2007</h4>
-								<p>Progressively reconceptualize multifunctional "outside the box" thinking through inexpensive methods of empowerment. Compellingly morph extensive niche markets with mission-critical ideas. Phosfluorescently deliver bricks-and-clicks strategic theme areas rather than scalable benefits. </p>
-							</div>
-
-							<div class="job">
-								<h2>Microsoft</h2>
-								<h3>Principal and Creative Lead</h3>
-								<h4>2004-2005</h4>
-								<p>Intrinsicly transform flexible manufactured products without excellent intellectual capital. Energistically evisculate orthogonal architectures through covalent action items. Assertively incentivize sticky platforms without synergistic materials. </p>
-							</div>
+      <div class="row-item">
+        <img id="image" class="elements"
+          src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg">
+        <h5 class="elements" >Abhilash Hegde</h5>
+        <h6 class="elements">Developer</h6>
+      
+      </div>
 
 
-							<div class="job last">
-								<h2>International Business Machines (IBM)</h2>
-								<h3>Lead Web Designer</h3>
-								<h4>2001-2004</h4>
-								<p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent e-tailers with timely e-markets.</p>
-							</div>
-
-						</div><!--// .yui-u -->
-					</div><!--// .yui-gf -->
-
-
-					<div class="yui-gf last">
-						<div class="yui-u first">
-							<h2>Education</h2>
-						</div>
-						<div class="yui-u">
-							<h2>Indiana University - Bloomington, Indiana</h2>
-							<h3>Dual Major, Economics and English &mdash; <strong>4.0 GPA</strong> </h3>
-						</div>
-					</div><!--// .yui-gf -->
+      <div class="row-item" style="height: 300px;">
+      <ul class="elements" style=" margin-left: 20px; list-style: none;">
+          <li ><img class="icon" src="https://png.pngitem.com/pimgs/s/146-1466755_nearby-transparent-background-address-icon-hd-png-download.png">adddr1</li>
+          <li>address2</li>
+            <li>address3</li>
+          <li><img class="icon" src="data:image/png;base64,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">hegdeabhilash19@gmail.com</li>
+            <li><img class="icon" src="https://i.pinimg.com/originals/ea/b4/70/eab4700ec044e504ef73c3a6eb6b03e6.jpg">Website</li>
+              <li><img class="icon" src="https://cdn-icons-png.flaticon.com/512/61/61109.png">Social</li>
+        </ul>
+      </div>
 
 
-				</div><!--// .yui-b -->
-			</div><!--// yui-main -->
-		</div><!--// bd -->
 
-		<div id="ft">
-			<p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313) - 867-5309</p>
-		</div><!--// footer -->
+      <div class="row-item">
 
-	</div><!-- // inner -->
+          <h6 style="padding: 0px;">Profile</h6>
+          <p style="font-size: 16px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
 
 
-</div><!--// doc -->
+      
+      <div class="row-item">4
 
+
+      </div>
+    
+    
+    </div>
+
+
+
+    <div class="grid-item"></div>
+
+  </div>
 
 </body>
-</html>
 
+</html>
