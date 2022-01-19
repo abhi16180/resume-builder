@@ -35,7 +35,7 @@ async function renderPDF(stud) {
             website: "wwww.hegdeabhilash19.com",
             email: "hegdeabhilash19@gmail",
             social: "abhi16180/",
-            profile: "dafasdaslkdajsdklajlkajsddlasjdlaskjflkasflasjflkasjflajflasjflkaskjlwjerljasdlj dksladjaslkk dlsajd lksajdflkskaj",
+            profile: "dafasdaslkdajsdklajlkajsddlasj dlaskjflkasflasjflkasjflajflasjflkaskjlwjerljasdlj dksladjaslkk dlsajd lksajdflkskaj",
             skills: [
                 { skill: "C++" },
                 { skill: "Dart" },
