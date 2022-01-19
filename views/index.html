@@ -1,116 +1,316 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 400px 410px;
+        background-color: #ffffff;
+        padding: 10px;
+      }
 
-<head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: 400px 410px;
-      background-color: #ffffff;
-      padding: 10px;
+      .grid-item {
+        /* border: 1px solid rgba(0, 0, 0, 0.8); */
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        height: 1040px;
+      }
 
-    }
+      .grid-row-container {
+        grid-template-rows: max-content;
+      }
 
-    .grid-item {
+      .row-item {
+        /* height: 260px; */
+        background-color: rgb(255, 255, 255);
+        /* border: 1px solid rgba(0, 0, 0, 0.8); */
+      }
 
-      border: 1px solid rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      font-size: 30px;
-      text-align: center;
-      height: 1040px;
+      #image {
+        border-radius: 50%;
+        width: 140px;
+        height: auto;
+        padding: 8px;
+      }
+
+      .elements {
+        height: 0px;
+        font-size: 16px;
+        padding: 0px;
+        margin-top: 15px;
+      }
+
+      .icon {
+        /* Adjust these valures accordingly */
+        height: 15px;
+        width: 15px;
+        position: absolute;
+        left: 50px;
+        padding-right: 10px;
+      }
+
+      .edu {
+        height: 15px;
+
+        position: absolute;
+        left: 450px;
+      }
+
+      .gradient {
+        width: 360px;
+        height: 4px;
+        background-image: linear-gradient(
+          to right,
+          rgb(30, 255, 0),
+          rgb(0, 89, 255)
+        );
+      }
 
 
-    }
+              @media print {
+            /* prevent blank page at end */
+            table:last-of-type { page-break-after: auto; }
+            html, body {
+                height: 100%;
+            }
+        }
+    </style>
+  </head>
 
-    .grid-row-container {
-      grid-template-rows: max-content;
-    }
+  <body style="font-family: 'Poppins', sans-serif 'Open Sans'">
+    <div class="grid-container" style="font-family: 'Poppins'">
+      <div class="grid-item grid-row-container">
+        <div class="row-item">
+          <img
+            id="image"
+            class="elements"
+            src="https://assets.zeezest.com/users/PROD_Generic%20Photo_1640418549546.jpg"
+          />
+          <h5 class="elements">Abhilash Hegde</h5>
+          <h6 class="elements">Developer</h6>
+        </div>
 
-    .row-item {
-      /* height: 260px; */
-      background-color: white;
-      border: 1px solid rgba(0, 0, 0, 0.8);
-    }
+        <div class="row-item" style="height: 300px">
+          <ul class="elements" style="margin-left: 20px; list-style: none;">
+            <li>
+              <img 
+              style="margin-right: 20px;"
+                class="icon"
+                src="https://png.pngitem.com/pimgs/s/146-1466755_nearby-transparent-background-address-icon-hd-png-download.png"
+              />{{addr1}}
+            </li>
+            <li>{{addr2}}</li>
+            <li>{{addr3}}</li>
+            <li>
+              <img
+                class="icon"
+                src="data:image/png;base64,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"
+              />hegdeabhilash19@gmail.com
+            </li>
+            <li>
+              <img
+                class="icon"
+                src="https://i.pinimg.com/originals/ea/b4/70/eab4700ec044e504ef73c3a6eb6b03e6.jpg"
+              />{{website}}
+            </li>
+            <li>
+              <img
+                class="icon"
+                src="https://cdn-icons-png.flaticon.com/512/61/61109.png"
+              />{{email}}
+            </li>
+          </ul>
+        </div>
 
-    #image {
-      border-radius: 50%;
-      width: 140px;
-      height: auto;
-      padding: 8px;
-    }
-
-    .elements {
-      height: 0px;
-      font-size: 16px;
-      padding: 0px;
-      margin-top: 15px;
-
-    }
-  .icon {
- 
-  /* Adjust these valures accordingly */
-height: 15px;
-width: 15px;
-position:absolute;
-left: 50px;
-padding-right: 10px;
-
-}
-  </style>
-</head>
-
-<body style="font-family: 'Poppins', sans-serif 'Open Sans';">
-
-  <div class="grid-container" style="font-family: 'Nunito Sans';">
-    <div class="grid-item grid-row-container">
-
-      <div class="row-item">
-        <img id="image" class="elements"
-          src="https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_0.jpg">
-        <h5 class="elements" >Abhilash Hegde</h5>
-        <h6 class="elements">Developer</h6>
-      
+        <div class="row-item">
+          <h6
+            class="elements"
+            style="
+              padding: 0px;
+              position: absolute;
+              top: 500px;
+              left: 50px;
+              font-size: 24px;
+            "
+          >
+            Profile
+          </h6>
+          <div
+            class="gradient"
+            style="position: absolute; top: 550px; width: 340px; left: 48px"
+          ></div>
+          <p
+            style="
+              font-size: 16px;
+              text-align: justify;
+              padding: 10px;
+              position: absolute;
+              top: 540px;
+              width: 340px;
+              height: 200px;
+            "
+          >
+       {{profile}}
+          </p>
+          <h6
+            class="elements"
+            style="
+              padding: 0px;
+              position: absolute;
+              top: 780px;
+              left: 50px;
+              font-size: 24px;
+            "
+          >
+            Skills
+          </h6>
+          <div
+            class="gradient"
+            style="position: absolute; left: 48px; top: 835px; width: 340px"
+          ></div>
+          <ul
+            class="elements"
+            style="margin-left: 20px; margin-top: 240px; list-style: none"
+          >
+            {{#each skills}}
+            <li>
+              <img
+                class="icon"
+                style="height: 25px; width: auto"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RngfiV47_IGwjRc2jIWcqDVNBnqGeF8f8g&usqp=CAU"
+              />{{skill}}
+            </li>
+            {{/each}}
+            <!-- <li><img class="icon" style=" height:20px; width:auto; "
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RngfiV47_IGwjRc2jIWcqDVNBnqGeF8f8g&usqp=CAU">hegdeabhilash19@gmail.com
+          </li>
+          <li><img class="icon" style=" height:20px; width:auto; "
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RngfiV47_IGwjRc2jIWcqDVNBnqGeF8f8g&usqp=CAU">Website
+          </li>
+          <li><img class="icon" style=" height:20px; width:auto; "
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_RngfiV47_IGwjRc2jIWcqDVNBnqGeF8f8g&usqp=CAU">Social
+          </li> -->
+          </ul>
+        </div>
       </div>
 
+      <!-- column two -->
 
-      <div class="row-item" style="height: 300px;">
-      <ul class="elements" style=" margin-left: 20px; list-style: none;">
-          <li ><img class="icon" src="https://png.pngitem.com/pimgs/s/146-1466755_nearby-transparent-background-address-icon-hd-png-download.png">adddr1</li>
-          <li>address2</li>
-            <li>address3</li>
-          <li><img class="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP0AAADICAMAAAAUXBfQAAAAflBMVEX39/cAAAD///+enp77+/sJCQn8/PxBQUHf3981NTWysrJcXFzz8/PIyMhfX1+9vb3Y2NiOjo52dnZoaGjp6emCgoKqqqqXl5cfHx+lpaW2trYXFxcsLCxra2s7Ozvm5uZLS0soKChFRUVUVFQeHh6QkJB/f391dXXR0dHCwsIywVMqAAAJpklEQVR4nO2d6XqqMBCGTUwRFRUV9wWXnrbe/w0e0CYBJQuQzcL36xyf1vKSZCaZTCadTqtWrVq1atWqVatWqoWobD+KOSHkwVRB7PthKt+Pg/sn3t9+DSk3ikaD6eyyBnmtL7PpYBSh9B3YfkwNSsiRP1hcAV/XxcBHf+wNJE0adsc7ATnWbtwNk05i+6HVCMFgMpMEp5pNgvd/AQh2JofS6A8dJp23fgEeDMu3eq4HhNCzDVFNSY/f9Guxp+pv3nEEIBgtaqM/tIjejB9Bv+poL9LBfyN+BONvheypvuN34YdBPVNXrFkAbYNJyENdDeypush1+4/g7awJHoDzze3u7wVzbeyp5oG7zY/gVit7qq2rze8FY+3wAIzdbH44MsCeauSe8UdQ1dROrIVrvd8LTsbgATi51fthKBu6UKNd6FDvhxOj7KkmzuDDlXF4AFaO4MMvC/AAfDmB7+md3rE1d8D0eUNL8AAMreMjUYRep66W/b5nEz7Bt9r60MTMnqexRdMHVQbvqulgDR9ObbMnmlrCh0vb5HctreB7pla0Io0smD4U26Ymis07PrS3DU20N07vgLmnMm344cY2cU4bo/jIt837JN9k5/eOtnGfdDRo9w1GMGW1MNb3UWibtUChqb7v1U/JUK++ob5vJYwnlplAn0OTvLyMTPmgvVAWX0MDjY9cWdy8aqS/8Z00eQ/pN3zewDYjRwPd+PDTNiJHn5pHvudGPIelpd7GR2b3astqp9XucUb9eNVVqg3VkmqQasleZmgd+UyD34ugSQU9xnPoNPtMX78zyp6KNQI1+nzISk+ZGKdn5UuctJl9dkSnY5y+w3oUbVEe5t7NBzJC7GX+jT4Yz6Jvb4f1Fz+yzzWYrv4lmqZapPpKNEv0nepw1/yuMdbwV9dEp0SXy6XXOx6P/UT7/f58Pq/Xnx8fP9k3wXwWTeyImZuUa3tduRzHINsPmG0PJnq6PmRiPehJ02iJdi/wt29XfPq5pq7PfLIH/eqIjd+Pevgthl+ALp8eaGH32AnYD/ouAOHvIzJnIxW1jjNfLKLf6pjxcPI0CD1Y4iZSmsU2x99671Qiej35HOyno/TgGz+owsVgF39nl/6XQ6+j6/MiWhl6apqVbXZha4pz44T0Gma7vDSVLD192o6StO0LfpsxPrMvpNcw4eHF8/L0YEPtc21RR0c+EtKrX+ihiPOIT/Tg8PrIFUWWTxkrKqQHkequz57oFdCDvprBn3N0JeiVT/e4vfiFPj0881CdTNa8oytBr3xDF/LmLwX01E1VTuoj5uNp31BM31NNj3jPWUSfTDp+VfHgBp43viSBi+mB4p7P37IvpAdnHOuLK+wBnPCawX/5ZQl6xZv5nEk+k54O/vKZ3FOO15CgVzzV549eFj34xxi6It3w7xWdZZegVzzf4W9bM+nBEGPcSrCTIVO8VJSgV7yZDbmZmWx66rKjsyw8mSsxVhYS9Hu19AH3eTn0memaZMSLLJJZo0WCHgQq4bnzXAE9tWBSRRmwo2OPNRl6pXNdxI9V8enBCQc9xWkf5Ed9Np0M/Y9Sev5yRUAPdj4e/ILEbtJNeDkSMvRblfSCbXsRfSYoyU3txvODQkdHJEOvdCPf4w9ZMT1dp7PD3X3i6PipQTL0XZX0gjiFBD0d0SwTInJ0lEyCXukqT3AWQYY+E+4uTPAmju6f4Guk6JWeVxD4ajl6ClhQhwq/GiTOhZShV7qhIzhzKUkPZhj/2YheJRwdkQy90pi+InrQwxGv/IKZLIakkgHN0/P7ozQ97eGdzOAnjk6uMpsMvdJljjp66vlxlJZEQOFF6gss0Cvq+ZnZHO7mM/oBklsHve24p50cm7hB9gNXx70SjweuufSLZPAPw/wHMJbIADfv8VTMdsAKM/50n6DDE3kv4q1v87Od+jNd8EHaeZXZqLgrdf8kCCJcBhuf6dZf5YAhntB07gHefSa19eHoiPkTlewyvsqpvcKlGzNkkYMNIFnzn3EUQBABNr7CrRndAJ+k12fWMA8zkA32koUAt2iZ8ehGvcgWmONsxiA3oRlHz7t8Yzw8EMfFmo9s1Ylq0iaVCOqTpD+26zce1awT0T7jiL5cKgdZ8TBdv/GIdvXdDJrEFUmeWu+JXL/53YyqO1l0UVNiH5u4/uKRYmEnq9ouJglU8qO0z+K7fvO7mNV2sL/IGD6XgU88JM/1m9/BrpK9QPehK5zfJLOjV9dvPnuhQuYKtV6VitOQmfFLvr/5zJXyWUskjOFXPcDIcv0WspaqZqzVOapAXX/O31rIWCuXrXjFOUcS4XmO6BnH7Lu3kK1YKlOVhDFql1guWvVbyFQtk6VMFnQK7pAgU0Xq+i1kKctnqI/zYYy6oqt+/C5tZKjLnk54DWPUFXX9H3L0Ws7iytCvSUsprLk5JAdd51L0GtilTiUxwhi1lXP9Vk4lSZxII1sTZXITpUTmTlHfzok04WnEAen1GkqwUdf/JTiLqec0ovAkKvFNeorvEdcf8Ok1nUSVPIWs7R6F7+wrNn4KWe4Euurb0TKirt/CCXRO9QFCH5/W/ayORepV1PG8FdNrqz4grjyBtonSmjDL5abbXa3SIgRp+YG09MC95kBaaeBRYuBRYICUFzjvX9V/0fob/yXzlSfUVh3xPI/cgR0EQRTFsX+/HPrn52eU6nabTNJ3mbzJ+6tM3+ViGvCti76qIw2vOONMtaHIRrUhXqWpueJKUxyt2JkkemvMNbrKWMMrzDW7umDDK0s2u6powyvKNruacMMrSTe7irijhs9UBfmG3x7Q7JsjGn5rSMNvjGn2bUENvymq4beEuTTls3BDXLNvB2z4zZANvxXUCcNv70bYht8G3PCboBt+C3jDb4BP8DVVjBdq7gB8YvqU1syW1pdVg0dlJdBnKownlr5MJaYmzsAn+LVT0ctpFzoEn5g+0bFxpToFThg8KmQw0rmA1v38iyRqB6rRyKlej+UFJmb9Y9d6PRaqXzFeqK2DvR7LC/RO/OauNvxDCN7O2tjPN4cb/iEPKTiJVagucrrhfwWDUsfNJTULnDT1r0IwVp2n/h073+mpEPRVhvwO/huxp0IwUjX5W0Rvxp4KwWBTP8mjvwnekP0uD4b1DOAshO9g51lCsDOpagEOk867NjtVMgIm5XvAbPK2Pf5ZCMKwO5YNgOzG3RD+FfSHkAeRP1iIov/XxcBH0PtT6L9K3gBE0WgwnV3WT9Try2w6GEVJJ/mT5EQIPQ7vBfH9AFYY+n78OGfloT8Nnheisv0orVq1atWqVatWrf6g/gOkCM2S9MJa4AAAAABJRU5ErkJggg==">hegdeabhilash19@gmail.com</li>
-            <li><img class="icon" src="https://i.pinimg.com/originals/ea/b4/70/eab4700ec044e504ef73c3a6eb6b03e6.jpg">Website</li>
-              <li><img class="icon" src="https://cdn-icons-png.flaticon.com/512/61/61109.png">Social</li>
-        </ul>
+      <div class="grid-item" style="text-align: left">
+        <div class="grid-item grid-row-container" style="text-align: left">
+          <div class="row-item" style="height: 300px">
+            <h3
+              class="elements"
+              style="
+                position: absolute;
+                top: 50px;
+                left: 440px;
+                font-size: 24px;
+              "
+            >
+              Education
+            </h3>
+            <div
+              class="gradient"
+              style="position: absolute; left: 440px; top: 100px"
+            ></div>
+            <ul
+              class="elements"
+              style="
+                margin-left: 20px;
+                list-style: none;
+                padding: 0px;
+                position: absolute;
+                top: 120px;
+                left: 420px;
+              "
+            >
+              {{#each education_list1}}
+              <li>
+                <p
+                  style="
+                    padding: 0px;
+                    position: absolute;
+                    left: 50px;
+                    text-align: left;
+                  "
+                ></p>
+                {{edu_detail}}
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="row-item" style="height: 300px">
+            <ul
+              class="elements"
+              style="
+                margin-left: 20px;
+                list-style: none;
+                padding: 0px;
+                position: absolute;
+                top: 200px;
+                left: 420px;
+              "
+            >
+              {{#each education_list2}}
+              <li>{{edu_detail}}</li>
+              {{/each}}
+            </ul>
+          </div>
+
+          <h3
+            class="elements"
+            style="position: absolute; top: 380px; left: 440px; font-size: 24px"
+          >
+            Work Experience
+          </h3>
+          <div
+            class="gradient"
+            style="position: absolute; left: 440px; top: 430px"
+          ></div>
+          <div class="row-item" style="height: 300px">
+            <ul
+              class="elements"
+              style="
+                margin-left: 20px;
+                list-style: none;
+                padding: 0px;
+                position: absolute;
+                top: 420px;
+                left: 420px;
+              "
+            >
+              {{#each work_list1}}
+              <li>{{work_detail}}</li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="row-item" style="height: 300px">
+            <ul
+              class="elements"
+              style="
+                margin-left: 20px;
+                list-style: none;
+                padding: 0px;
+                position: absolute;
+                top: 520px;
+                left: 420px;
+              "
+            >
+              {{#each work_list2}}
+              <li>{{work_detail}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
       </div>
-
-
-
-      <div class="row-item">
-
-          <h6 style="padding: 0px;">Profile</h6>
-          <p style="font-size: 16px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-      </div>
-
-
-      
-      <div class="row-item">4
-
-
-      </div>
-    
-    
     </div>
-
-
-
-    <div class="grid-item"></div>
-
-  </div>
-
-</body>
-
+  </body>
 </html>

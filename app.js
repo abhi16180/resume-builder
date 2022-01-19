@@ -28,18 +28,47 @@ async function renderPDF(stud) {
         });
         const page = await browser.newPage();
         const content = await compile('index', {
+            name: "Abhilash",
+            addr1: "At:Ambalikemane,Po:Targod",
+            addr2: "Karnataka",
+            addr3: "India",
+            website: "wwww.hegdeabhilash19.com",
+            email: "hegdeabhilash19@gmail",
+            social: "abhi16180/",
+            profile: "dafasdaslkdajsdklajlkajsddlasjdlaskjflkasflasjflkasjflajflasjflkaskjlwjerljasdlj dksladjaslkk dlsajd lksajdflkskaj",
             skills: [
-                { skillName: 'iPhone' },
-                { skillName: 'Android' },
-                { skillName: 'Windows Phone' }
-            ]
+                { skill: "C++" },
+                { skill: "Dart" },
+                { skill: "Js" },
+                { skill: "C" },
+            ],
+            education_list1: [
+                { edu_detail: "PUC" },
+                { edu_detail: "MYSORE COLLEGE" },
+                { edu_detail: "2020-12-10" },
+            ],
+            education_list2: [
+                { edu_detail: "PUC" },
+                { edu_detail: "MYSORE COLLEGE" },
+                { edu_detail: "2020-12-10" },
+            ],
+            work_list1: [
+                { work_detail: "JS dev" },
+                { work_detail: "Golden Company" },
+                { work_detail: "2020-12-10" },
+            ],
+            work_list2: [
+                { work_detail: "Flutter dev" },
+                { work_detail: "Another good company" },
+                { work_detail: "2020-12-10" },
+            ],
         });
         await page.addStyleTag({ path: './dist/output.css' })
         await page.setContent(content);
         await page.emulateMediaType('screen')
         await page.pdf({
             path: 'temp.pdf',
-            format: 'A4',
+            // format: 'A4',
             printBackground: true
         });
 
